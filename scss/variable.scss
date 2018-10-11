@@ -1,0 +1,24 @@
+$orange: #ff3100;
+$orange-on: #ed2e00;
+$blue: #658ca8;
+$grey-light: #8b8b8b;
+$silver: #f4f6f7;
+$grey-dark: #454545;
+$green:#91bb63;
+
+/*media query*/
+$phone-portrait: "(min-device-width: 320px) and (max-device-width: 812px) and (orientation: portrait)";
+$phone-landscape: "(min-device-width:320px) and (max-device-width: 812px) and (orientation: landscape)";
+$phone-port-land: "(min-width:320px) and (max-width: 812px) ";
+$tablet-portrait: "(min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait)";
+$tablet-landscape: "(min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape)";
+$tablet-port-land: "(min-width: 768px) and (max-width: 1024px) ";
+$large-desktop: "(min-width: 1200px)";
+$non-retina: "screen and (-webkit-max-device-pixel-ratio: 1)";
+$retina: "(min--moz-device-pixel-ratio: 1.5), \a                     (-o-min-device-pixel-ratio: 3/2), \a                     (-webkit-min-device-pixel-ratio: 1.5), \a                     (min-device-pixel-ratio: 1.5), \a                     (min-resolution: 144dpi), \a                     (min-resolution: 1.5dppx)";
+
+@mixin respond-to($media) {
+    @media only screen and #{$media} {
+        @content;
+    }
+}
