@@ -1,2 +1,136 @@
-/*@import "mixins";
-@import "variable";*/
+@import "mixins";
+@import "variable";
+@import "modules/header";
+@import "modules/news";
+
+body, .wrapper {
+    width: 100%;
+}
+
+body, body * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+.netflix {
+    a {
+        text-decoration: none;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    .cell {
+        display: inline-block;
+    }
+
+    .ima {
+        img {
+            width: 100%;
+        }
+    }
+
+    .sectiontitle {
+        @include sectiontitle;
+    }
+
+    .newstitle {
+        @include newstitle;
+    }
+
+    .sectiontxt {
+        @include sectiontxt;
+    }
+
+    .authortxt {
+        @include authortxt;
+    }
+
+    .wrapper {
+        display: inline-block;
+        float: left;
+        width: 100%;
+        clear: both;
+
+        .container {
+            max-width: 80em;
+            width: 100%;
+            float: none;
+            clear: both;
+            margin: 0 auto;
+            background: #ffffff;
+            overflow: hidden;
+
+            .container-in {
+                width: 100%;
+                float: left;
+                display: inline-block;
+                padding: 0 2rem;
+            }
+        }
+    }
+
+    .section-cont {
+        width: 100%;
+        display: inline-block;
+        float: left;
+        padding: 3rem 0;
+    }
+
+    .footer {
+        display: inline-block;
+        float: left;
+        width: 100%;
+        height: 8rem;
+        background: $grey-light;
+    }
+}
+
+/*media query*/
+/*tablet*/
+@include respond-to($tablet-port-land) {
+    .netflix {
+        .wrapper {
+            .container {
+                .container-in {
+                    padding: 0 2rem;
+                }
+            }
+        }
+
+        .section-cont {
+            &.sectLeft {
+                .box {
+                    padding-right: 1.5rem;
+                }
+            }
+        }
+    }
+}
+
+
+@include respond-to($phone-port-land) {
+    .netflix {
+        .wrapper {
+            .container {
+                .container-in {
+                    padding: 0 1rem;
+                }
+
+                .section-cont {
+                    &.sectLeft, &.sectRight {
+                        width: 100%;
+                    }
+
+                    &.sectRight {
+                        padding-top: 0;
+                    }
+                }
+            }
+        }
+    }
+}

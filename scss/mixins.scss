@@ -1,86 +1,49 @@
-@mixin maintitle {
-    color: $blue;
-    font-family: 'TitilliumSemiBold', sans-serif;
-    font-size: 4rem;
-    font-weight: 600;
-    line-height: 1;
-
-    @include respond-to($phone-port-land) {
-        font-size: 2.5rem;
-        line-height: 1.1;
-    }
-}
-
-@mixin subtitle {
-    color: #454545;
-    font-family: 'TitilliumRegular', sans-serif;
-    font-size: 1.25rem;
-    line-height: 1.625rem;
-    font-weight: 700;
-    padding: 1.5rem 0;
-    margin: 0;
-
-    @include respond-to($phone-port-land) {
-        font-size: 1.125rem;
-    }
-}
-
-@mixin subtitle-txt {
-    color: $grey-dark;
-    font-family: 'TitilliumSemiBold', sans-serif;
-    font-size: 1.125rem;
-    line-height: 1.625rem;
-    font-weight: 700;
-}
-
-@mixin blue-txt {
-    color: $blue;
-    font-family: 'TitilliumSemiBold', sans-serif;
-    font-size: 1.125rem;
-    line-height: 1.625rem;
-    font-weight: 700;
-}
-
-@mixin orange-txt {
-    color: $orange;
-    font-family: 'TitilliumSemiBold', sans-serif;
-    font-size: 1.125rem;
-    line-height: 1.625rem;
-    font-weight: 700;
-}
-
 @mixin sectiontitle {
-    color: $blue;
-    font-family: 'TitilliumSemiBold', sans-serif;
-    font-size: 2.75rem;
-    font-weight: 700;
-    line-height: 1.1;
+    margin-bottom: 2rem;
+    color: $red-dark;
+    font-size: 1.375rem;
+    font-weight: 600;
+    line-height: 1.3;
+    text-transform: uppercase;
+
+    @include respond-to($phone-port-land) {
+        font-size: 1rem;
+        line-height: 1;
+    }
+}
+
+@mixin newstitle {
+    color: #454545;
+    font-family: 'Montserrat', sans-serif;
 }
 
 @mixin sectiontxt {
-    color: #454545;
-    font-family: 'TitilliumRegular', sans-serif;
-    font-size: 1.125rem;
-    line-height: 1.625rem;
+    color: $grey-dark;
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
     font-weight: 400;
 }
 
-@mixin error {
-    color: #ed4459;
-    font-family: 'TitilliumRegular', sans-serif;
-    font-size: 0.875rem;
-    font-weight: 400;
-    line-height: 1.1;
+@mixin authortxt {
+    display: inline-block;
+    float: left;
+    padding-right: 1rem;
+    color: $red-light;
+    font-size: 1.0652rem;
+    font-weight: 600;
+
+    em {
+        font-style: normal;
+    }
 }
 
 @mixin actionbutton {
-    font-size: 1.25rem;
+    font-size: 1rem;
     line-height: 1;
     text-shadow: none;
     border: none;
     max-width: 100%;
-    width: 15rem;
-    font-family: 'TitilliumSemiBold', sans-serif;
     padding: 1rem;
 
     @include border-radius(0.25rem);
@@ -108,33 +71,4 @@
     border-radius: $radius;
     -webkit-border-radius: $radius;
     -moz-border-radius: $radius;
-}
-
-@mixin border-radii($topleft, $topright, $bottomright, $bottomleft) {
-    border-top-left-radius: $topleft;
-    border-top-right-radius: $topright;
-    border-bottom-right-radius: $bottomright;
-    border-bottom-left-radius: $bottomleft;
-    -webkit-border-top-left-radius: $topleft;
-    -webkit-border-top-right-radius: $topright;
-    -webkit-border-bottom-right-radius: $bottomright;
-    -webkit-border-bottom-left-radius: $bottomleft;
-    -moz-border-radius-topleft: $topleft;
-    -moz-border-radius-topright: $topright;
-    -moz-border-radius-bottomright: $bottomright;
-    -moz-border-radius-bottomleft: $bottomleft;
-}
-
-@mixin box-s($x, $y, $offset, $color, $inset: false) {
-    $ie-color: ie-hex-str($color);
-
-    @if $inset {
-        -webkit-box-shadow: inset $x $y $offset $color;
-        box-shadow: inset $x $y $offset $color;
-    }
-    @else {
-        -webkit-box-shadow: $x $y $offset $color;
-        box-shadow: $x $y $offset $color;
-        filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=#{$x}, OffY=#{$y}, Color='#{$ie-color}');
-    }
 }
